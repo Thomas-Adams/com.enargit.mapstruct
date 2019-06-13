@@ -93,7 +93,7 @@ public class CategoryEntity {
             return this;
         }
 
-        public Builder TodoEntity(TodoEntity todoEntity) {
+        public Builder todoEntity(TodoEntity todoEntity) {
             this.todoEntity = todoEntity;
             return this;
         }

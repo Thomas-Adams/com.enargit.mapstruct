@@ -20,12 +20,12 @@ public class CycleAvoidingMappingContext {
 
     @SuppressWarnings("unchecked")
     @BeforeMapping
-    public <T> T getMappedInstance(final Object source, @TargetType final Class<T> targetType) {
+    public <T> T getMappedInstance(final Object source, @MappingTarget final Class<T> targetType) {
         return (T) knownInstances.get(source);
     }
 
     @BeforeMapping
-    public void storeMappedInstance(final Object source, @TargetType final Object target) {
+    public void storeMappedInstance(final Object source, @MappingTarget final Object target) {
         knownInstances.put(source, target);
     }
 }

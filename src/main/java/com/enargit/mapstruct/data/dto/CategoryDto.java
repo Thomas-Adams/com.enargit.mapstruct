@@ -79,7 +79,7 @@ public class CategoryDto {
             return this;
         }
 
-        public CategoryDto.Builder TodoDto(TodoDto todoDto) {
+        public CategoryDto.Builder todoDto(TodoDto todoDto) {
             this.todoDto = todoDto;
             return this;
         }

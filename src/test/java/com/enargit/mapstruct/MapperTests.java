@@ -12,11 +12,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.Set;
 
 
 public class MapperTests {
 
-
+    @Test
     public void testCategoryMapper() {
 
         CategoryEntity ce = CategoryEntity.builder().id(1).name("Sports").build();
@@ -33,7 +34,12 @@ public class MapperTests {
     @Test
     public void testTodoMapper() {
 
-        TodoEntity ce = TodoEntity.builder().id(1).title("Sports").categoryEntities(new HashSet<>(0)).build();
+
+        Set<CategoryEntity> categoryEntities = new HashSet<>(0);
+        CategoryEntity cat1 = CategoryEntity.builder().id(1).name("Category 1").build();
+        categoryEntities.add(cat1);
+
+        TodoEntity ce = TodoEntity.builder().id(1).title("Sports").categoryEntities(categoryEntities).build();
         Assert.assertEquals(1, ce.getId());
         Assert.assertEquals("Sports", ce.getTitle());
 
@@ -41,7 +47,9 @@ public class MapperTests {
         TodoDto co = TodoMapper.INSTANCE.toTodoDto(ce, cycleAvoidingMappingContext);
         Assert.assertEquals(1, co.getId());
         Assert.assertEquals("Sports", co.getTitle());
-        Assert.assertNotNull( co.getTitle());
+        Assert.assertNotNull( co.getCategoryDtos());
+        Assert.assertEquals(1, co.getCategoryDtos().size());
+
     }
 
 }
