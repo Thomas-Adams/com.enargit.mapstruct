@@ -1,0 +1,67 @@
+### Maven ###
+
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+HELP.md
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+### Package Files ###
+*.war
+*.ear
+
+
+### Eclipse ###
+.settings/
+*.project
+*.classpath
+.prefs
+*.prefs
+.metadata/
+
+
+### Mac ###
+.DS_Store
+
+
+### Java ###
+*/bin/*
+*.class
+
+### Gradle ###
+.gradle/
